@@ -20,7 +20,15 @@ object Bloxorz extends App {
    * A simple level constructed using the StringParserTerrain 
    */
   abstract class Level extends Solver with StringParserTerrain
-  
+
+  object LevelNone extends Level {
+    val level =
+      """------
+        |--ST--
+        |------""".stripMargin
+  }
+  println(LevelNone.solution)
+
   object Level0 extends Level {
     val level =
       """------
@@ -29,7 +37,6 @@ object Bloxorz extends App {
         |--oo--
         |------""".stripMargin
   }
-
   println(Level0.solution)
 
   /**
